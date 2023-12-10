@@ -182,7 +182,7 @@ def main():
                         default='/home/ml/ydong26/tmp_store/editNTS_%s'%dataset,
                         help='Path to exp storage directory.')
     parser.add_argument('--vocab_path', type=str, dest='vocab_path',
-                        default='../vocab_data/',
+                        default='vocab_data/',
                         help='Path contains vocab, embedding, postag_set')
     parser.add_argument('--load_model', type=str, dest='load_model',
                         default=None,
