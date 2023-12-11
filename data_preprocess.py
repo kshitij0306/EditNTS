@@ -38,8 +38,15 @@ def replace_lrb(sent_string):
 def process_raw_data(comp_txt, simp_txt):
     # comp_txt = [line.lower().split() for line in comp_txt]
     # simp_txt = [line.lower().split() for line in simp_txt]
-    comp_txt = pd.read_csv('data/INT.txt',  sep='\t')
-    simp_txt= pd.read_csv('data/ELE.txt',  sep='\t')
+    # comp_txt = pd.read_csv('data/INT.txt',  sep='\n')
+    # simp_txt= pd.read_csv('data/ELE.txt',  sep='\n')
+
+    with open('data/INT.txt') as f:
+     comp_txt = [line.rstrip('\n') for line in f]
+
+    with open('data/ELE.txt') as f:
+        simp_txt = [line.rstrip('\n') for line in f]
+
     assert len(comp_txt) == len(simp_txt)
     df = pd.DataFrame(
                         {'comp_tokens': comp_txt,
