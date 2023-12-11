@@ -126,5 +126,5 @@ def editnet_data_to_editnetID(df,output_path):
 if __name__ == '__main__':
     df = process_raw_data('', '')
     print('This is your df:')
-    editnet_data_to_editnetID(df,'output/gen_data.py')
+    editnet_data_to_editnetID(df,'output/gen_data.txt')
 
