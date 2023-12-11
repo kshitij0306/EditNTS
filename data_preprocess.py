@@ -72,7 +72,7 @@ def process_raw_data(comp_txt, simp_txt):
         pos_sentences = [pos_tag(word_tokenize(sent)) for sent in src_sentences]
         df['comp_pos_tags'] = pos_sentences
 
-        pos_vocab = data.POSvocab()
+        pos_vocab = data.POSvocab('vocab_data/')
         pos_ids_list = []
         for sent in pos_sentences:
             pos_ids = [pos_vocab.w2i[w[1]] if w[1] in pos_vocab.w2i.keys() else pos_vocab.w2i[UNK] for w in sent]
