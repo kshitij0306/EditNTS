@@ -67,6 +67,7 @@ def process_raw_data(comp_txt, simp_txt):
 
     def add_pos(df):
         src_sentences = df['comp_tokens'].tolist()
+        print('src_sentences', src_sentences)
         pos_sentences = [pos_tag(sent) for sent in src_sentences]
         df['comp_pos_tags'] = pos_sentences
 
