@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import data
 from nltk import pos_tag
+from nltk.tokenize import word_tokenize
 from label_edits import sent2edit
 
 # This script contains the reimplementation of the pre-process steps of the dataset
@@ -68,7 +69,7 @@ def process_raw_data(comp_txt, simp_txt):
     def add_pos(df):
         src_sentences = df['comp_tokens'].tolist()
         print('src_sentences', src_sentences)
-        pos_sentences = [pos_tag(sent) for sent in src_sentences]
+        pos_sentences = [pos_tag(word_tokenize(sent)) for sent in src_sentences]
         df['comp_pos_tags'] = pos_sentences
 
         pos_vocab = data.POSvocab()
