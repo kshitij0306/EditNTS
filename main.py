@@ -176,10 +176,10 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', type=str,dest='data_path',
-                        default='/home/ml/ydong26/data/EditNTS_data/editnet_data/%s/'%dataset,
+                        default='/output',
                         help='Path to train vocab_data')
     parser.add_argument('--store_dir', action='store', dest='store_dir',
-                        default='/home/ml/ydong26/tmp_store/editNTS_%s'%dataset,
+                        default='/main_output',
                         help='Path to exp storage directory.')
     parser.add_argument('--vocab_path', type=str, dest='vocab_path',
                         default='vocab_data/',
