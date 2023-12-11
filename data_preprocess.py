@@ -113,3 +113,9 @@ def editnet_data_to_editnetID(df,output_path):
                                             'edit_labels','new_edit_ids','comp_pos_tags','comp_pos_ids'])
     outdf.to_pickle(output_path)
     print('saved to %s'%output_path)
+
+if __name__ == '__main__':
+    df = process_raw_data('', '')
+    print('This is your df:')
+    editnet_data_to_editnetID(df,'output/gen_data.py')
+
